@@ -8,36 +8,35 @@ import * as ImagePicker from 'expo-image-picker';
 export default function TabTwoScreen() {
 
   // Hook for take images from local.
-  const [ selectedImage, setSelectedImage] = React.useState(null);
+  const [selectedImage, setSelectedImage] = React.useState({});
 
   let openImagePickerAsync = async () => {
     let permissionResult = await ImagePicker.requestCameraRollPermissionsAsync();
 
     if (permissionResult.granted === false) {
-      alert("Permission to access camera roll is required!");
+      alert('Permission to access camera roll is required!');
       return;
     }
 
     let pickerResult = await ImagePicker.launchImageLibraryAsync();
-    
-    if (pickerResult.cancelled === true){
+
+    if (pickerResult.cancelled === true) {
       return;
     }
 
-    setSelectedImage( { uri: pickerResult.uri });
-
+    setSelectedImage({ 'localUri' : pickerResult.uri });
   }
 
-  if ( selectedImage !== null ){
+  if ( 'localUri' in  selectedImage ){
     return (
       <View style={styles.container}>
         <Image
-          source={{ uri: selectedImage.uri }}
+          source={{ uri: selectedImage['localUri'] }}
           style={styles.thumbnail}
         />
       </View>
     );
-  } 
+    }
   
   else{
     return (

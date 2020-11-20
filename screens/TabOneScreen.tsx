@@ -9,7 +9,7 @@ export default function TabOneScreen() {
     <View style={styles.container}>
       <Text style={styles.title}>Yo por las mañanas.</Text>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <Image style={{ width: 305, height: 159,}} source={{uri: "https://i1.wp.com/betacoqueta.com/wp-content/uploads/2016/11/gato-selfie.jpg?resize=300%2C225&ssl=1" }}></Image>
+      <Image style={{ width: 305, height: 159,}} source={{uri: "https://cdn-images-1.medium.com/max/640/1*HfUjPCVB8Eer3q22lcuoew.gif" }}></Image>
       <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
       <EditScreenInfo path="/screens/TabOneScreen.js" />
     </View>
