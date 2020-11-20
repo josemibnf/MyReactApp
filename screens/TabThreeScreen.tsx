@@ -1,7 +1,6 @@
 import * as React from 'react';
-import { StyleSheet, Image } from 'react-native';
+import { StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-import EditScreenInfo from '../components/EditScreenInfo';
 import { Text, View } from '../components/Themed';
 
 
@@ -16,7 +15,11 @@ export default function TabThreeScreen() {
         style={styles.image}>
       </Image>
       <View style={styles.separator} lightColor="#eef" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="/screens/TabThreeScreen.js" />
+      <TouchableOpacity
+        onPress={() => alert('Muy bien, has aprendido a pulsar un boton.')}
+        style={styles.button}>
+        <Text style={styles.buttonText}>Pulsame</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -28,7 +31,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   title: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
   },
@@ -39,6 +42,15 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 305,
-    height: 159,
+    height: 300,
+  },
+  button: {
+    backgroundColor: "blue",
+    padding: 20,
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 20,
+    color: '#fff',    
   }
 });
